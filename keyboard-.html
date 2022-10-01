@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím</title>
+</head>
+<body onload="Ready()">
+    <img id="ironman" src="./iron_man.jpeg" style="position:absolute;left:0;top:0;" height="320" width="200"/>
+
+    <script>
+        function upArrow() {
+            let element = document.getElementById("ironman");
+            element.style.top = parseInt(element.style.top) - 5 + 'px';
+        }
+
+        function downArrow() {
+            let element = document.getElementById("ironman");
+            element.style.top = parseInt(element.style.top) + 5 + 'px';
+        }
+
+        function leftArrow() {
+            let element = document.getElementById("ironman");
+            element.style.left = parseInt(element.style.left) - 5 + 'px';
+        }
+
+        function rightArrow() {
+            let element = document.getElementById("ironman");
+            element.style.left = parseInt(element.style.left) + 5 + 'px';
+        }
+
+        function move(e) {
+            switch (e.keyCode) {
+                case 37:
+                    leftArrow();
+                    break;
+                case 39:
+                    rightArrow();
+                    break;
+                case 38:
+                    upArrow();
+                    break;
+                case 40:
+                    downArrow();
+                    break;
+            }
+        }
+
+        function Ready() {
+            window.addEventListener('keydown', move);
+        }
+    </script>
+</body>
+</html>
